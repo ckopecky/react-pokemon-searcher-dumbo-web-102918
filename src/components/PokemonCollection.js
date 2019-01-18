@@ -1,33 +1,20 @@
 import React from 'react'
 import PokemonCard from './PokemonCard'
 import { CardGroup } from 'reactstrap';
-import axios from 'axios';
 
-class PokemonCollection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pokemon : []
-    }
-  }
-
-  componentDidMount() {
-    axios.get("http://localhost:3000/pokemon")
-      .then(response => {
-        this.setState({pokemon: response.data});
-        console.log(this.state, "this.state")
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  }
-  render() {
+const PokemonCollection = props => {
+    console.log(props, "pokemon collection");
     return (
       <CardGroup className="card-group">
-        <PokemonCard pokemon = {this.state.pokemon}/>
+        <PokemonCard 
+          pokemon={props.pokemon}
+          currentPage={props.currentPage}
+          pageSize={props.pageSize}
+        
+        />
       </CardGroup>
     )
   }
-}
+
 
 export default PokemonCollection

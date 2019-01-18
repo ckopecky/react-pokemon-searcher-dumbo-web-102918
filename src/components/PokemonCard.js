@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, CardImg, CardTitle } from 'reactstrap';
 import heartbeat from './heartbeat-solid.svg';
 
 class PokemonCard extends React.Component {
@@ -12,9 +11,10 @@ class PokemonCard extends React.Component {
   
 
 render() {
+  console.log(this.props);
   return (
     <React.Fragment>
-      {this.props.pokemon.map(char => {
+       {this.props.pokemon.slice(this.props.currentPage * this.props.pageSize, (this.props.currentPage + 1) * this.props.pageSize).map((char)=> {
         return (
           <div key={char.id} className="card-container">
             <div className="card-inner">
@@ -48,8 +48,8 @@ render() {
                   <div>weight: {char.weight}g</div>
                   </div>
                   <div className="extra-content">
+                  <h5>Abilities</h5>
                     <ul>
-                      <h3>Abilities</h3>
                         {char.abilities.map(ability => {
                           return(
                             <li key={ability}>

@@ -1,9 +1,19 @@
 
+.main-container {
+  background-color: #e0dddd;
+}
 .main-container h1 {
   text-align: center;
   font-family: 'Roboto';
   font-size: 3.4em;
+  height: auto;
 }
+
+.pagination-wrapper {
+  overflow-x:auto;
+  display:flex;
+  justify-content: center;
+  }
 .card-group {
   display:flex;
   flex-wrap: wrap;
@@ -13,7 +23,7 @@
 .card-container {
   background-color: transparent;
   width: 350px;
-  height: 450px;
+  height: 500px;
   margin: 50px;
   perspective: 1000px;
 }
@@ -70,10 +80,20 @@
 }
 .extra-content {
   width: 100%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+}
+
+.extra-content h5 {
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.extra-content ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-right: 40px;
 }
 
 .icon {
